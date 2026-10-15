@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue-500: #0a8cff;
+  --blue-700: #0b3fa8;
+  --navy-900: #0a1530;
+  --ink: #0e0e10;
+  --paper: #d8d9dc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--paper);
+    color: var(--ink);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: #0a8cff;
+    color: #ffffff;
+  }
+}
+
+/* Brutalist Blue Highlight Box */
+.highlight-block {
+  display: inline-block;
+  background-color: #0a8cff;
+  color: #ffffff;
+  padding: 0.08em 0.35em;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Corner Tick Marks for Brutalist Cards */
+.corner-tick {
+  position: relative;
+}
+.corner-tick::before,
+.corner-tick::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+.corner-tick::before {
+  top: 0;
+  left: 0;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+.corner-tick::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
+}
+
+/* Corner brackets for CTA frame */
+.corner-bracket-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #0e0e10;
+  border-left: 2px solid #0e0e10;
+}
+.corner-bracket-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #0e0e10;
+  border-right: 2px solid #0e0e10;
+}
+.corner-bracket-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-bottom: 2px solid #0e0e10;
+  border-left: 2px solid #0e0e10;
+}
+.corner-bracket-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-bottom: 2px solid #0e0e10;
+  border-right: 2px solid #0e0e10;
+}
+
+/* Vertical 1px architectural grid lines */
+.grid-bg-overlay {
+  background-size: 80px 80px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+/* Suppress dev indicator overlay if requested */
+[data-nextjs-toast],
+nextjs-portal {
+  display: none !important;
+}
+
